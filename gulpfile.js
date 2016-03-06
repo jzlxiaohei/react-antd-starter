@@ -46,7 +46,7 @@ gulp.task("lib",["lib_prod","lib_dev"],function(cb){
 
 
 
-//深度遍历对象,对每个非对象属性,应用func
+// 深度遍历对象,对每个非对象属性,应用func
 // 对象属性,接着遍历
 function traverse(o,func) {
     for (var i in o) {
@@ -63,7 +63,7 @@ function replaceFn(str,holderObj){
     }
     return str;
 }
-//直接改变根据占位符key-value(比如'[project_name]' :'webpack-coc'),
+// 根据占位符key-value(比如'[project_name]' :'webpack-coc'),
 // 把configObj中的字符串中,holderObj的key全替换成value
 function replaceHolder(holderObj,configObj){
     if(typeof configObj == 'string'){
