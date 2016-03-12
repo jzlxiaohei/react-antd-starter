@@ -20,7 +20,7 @@
     
  build with `antd` is slow, now provide a compiled-version(`lib/antd.js`,`lib/antd.css`)
     
- if you do not use compiled version
+ if you wanna use compiled version
  
  1. add `antd:antd` to `externals` for `webpack`(dev,prod)
  2. remove `antd` from `plugins` in `.babelrc` file
