@@ -17,7 +17,7 @@ app.use(require('webpack-dev-middleware')(compiler, {
 app.use(require('webpack-hot-middleware')(compiler));
 
 app.use(function(req,res,next){
-    if(req.path.indexOf("/dist/") == 0){
+    if(req.path.indexOf("/lib/") == 0){
         return res.sendFile(path.join(__dirname,req.path))
     }
     return next()

@@ -5,10 +5,13 @@ var path = require('path')
 var gulp = require('gulp')
 var webpack = require('webpack')
 var gp_concat = require('gulp-concat'),
-    gp_uglify = require('gulp-uglify');
+    gp_uglify = require('gulp-uglify')
 
+var node_modules_path = path.join(__dirname, './node_modules')
+
+/** package lib : jquery react react-dom rx-lite begin **/
 var holderKeys = {
-    '[node_modules_path]': path.join(__dirname, './node_modules')
+    '[node_modules_path]': node_modules_path
 }
 var libPath = [
     '[node_modules_path]/jquery/dist/jquery.min.js',
@@ -31,19 +34,20 @@ gulp.task("lib_prod", function () {
     return gulp.src(libPath)
         .pipe(gp_concat('lib.min.js'))
         .pipe(gp_uglify())
-        .pipe(gulp.dest('dist'));
+        .pipe(gulp.dest('lib'));
 })
 
 gulp.task("lib_dev", function () {
     return gulp.src(libDevPath)
         .pipe(gp_concat('lib.js'))
-        .pipe(gp_uglify())
-        .pipe(gulp.dest('dist'));
+        .pipe(gulp.dest('lib'));
 })
 
 gulp.task("lib", ["lib_prod", "lib_dev"], function (cb) {
     cb()
 })
+
+/** package lib : jquery react react-dom rx-lite end **/
 
 gulp.task("default", function () {
     var prodConfig = require("./webpack.config.prod.js")
@@ -66,8 +70,15 @@ gulp.task("default", function () {
     })
 })
 
-// 深度遍历对象,对每个非对象属性,应用func
-// 对象属性,接着遍历
+
+
+/**
+ ***************** util function below ****************
+ */
+
+/**
+ * description: 深度遍历对象,对每个非对象属性,应用func
+ */
 function traverse(o, func) {
     for (var i in o) {
         func.call(this, o[i], i, o);
@@ -76,15 +87,21 @@ function traverse(o, func) {
         }
     }
 }
-// 字符串替换,把holderObj里的key,全替换成value
+
+/**
+ * description: 字符串替换,把holderObj里的key,全替换成value
+ */
 function replaceFn(str, holderObj) {
     for (var i in holderObj) {
         str = str.replace(i, holderObj[i])
     }
     return str;
 }
-// 根据占位符key-value(比如'[project_name]' :'webpack-coc'),
-// 把configObj中的字符串中,holderObj的key全替换成value
+
+
+/**
+ * description: 把configObj中的字符串,根据holderObj的key,全替换成value
+ */
 function replaceHolder(holderObj, configObj) {
     if (typeof configObj == 'string') {
         return replaceFn(configObj, holderObj)

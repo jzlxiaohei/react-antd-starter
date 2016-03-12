@@ -39,9 +39,10 @@ module.exports = {
         ]
     },
     externals:{
-        jquery:"jquery",
+        "jquery":"jquery",
         "react-dom":"ReactDOM",
-        react:"React",
-        "rx-lite":"Rx"
+        "react":"React",
+        "rx-lite":"Rx",
+        //"antd":"antd"
     }
 };

@@ -51,9 +51,10 @@ module.exports = {
         return [autoprefixer, precss];
     },
     externals:{
-        jquery:"jquery",
+        "jquery":"jquery",
         "react-dom":"ReactDOM",
-        react:"React",
+        "react":"React",
         "rx-lite":"Rx"
+        //"antd":"antd"
     }
 };

@@ -15,3 +15,15 @@
 2. `node devServer` to start dev server
 
 3. open localhost:3333 (you can change the port in devServer.js)
+
+# some points for antd
+    
+ build with `antd` is slow, now provide a compiled-version(`lib/antd.js`,`lib/antd.css`)
+    
+ if you do not use compiled version
+ 
+ 1. add `antd:antd` to `externals` for `webpack`(dev,prod)
+ 2. remove `antd` from `plugins` in `.babelrc` file
+ 3. script for `antd.js`,link for `antd.css`
+    
+    
