@@ -1,3 +1,4 @@
+
 import App  from './App';
 //import App2 from './App2'
 import './stores'
@@ -9,9 +10,10 @@ const Layout = React.createClass({
     render() {
         return (
             <div>
-                <Menu></Menu>
-                <div class='page'>this.props.children</div>
-                <div>
+                <div class='page'>
+                    {this.props.children}
+                </div>
+            </div>
         )
     }
 });

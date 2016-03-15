@@ -27,20 +27,43 @@ const columns = [{
 
 import { DatePicker, message ,Table} from 'antd';
 
-const App = React.createClass({
-    getInitialState() {
-        return {
-            date: ''
-        };
-    },
+//const App = React.createClass({
+//    getInitialState() {
+//        return {
+//            date: ''
+//        };
+//    },
+//    handleChange(value) {
+//        message.info('您选择的日期是: ' + value.toString());
+//        this.setState({
+//            date: value
+//        });
+//    },
+//    render() {
+//
+//        return (
+//            <div style={{width: 400, margin: '0 auto 100px'}}>
+//                <div>333</div>
+//                <div>222</div>
+//            </div>
+//        )
+//    }
+//});
+
+class App extends React.Component{
+
+    state = {
+        date: ''
+    }
+
     handleChange(value) {
         message.info('您选择的日期是: ' + value.toString());
         this.setState({
             date: value
         });
-    },
-    render() {
+    }
 
+    render() {
         return (
             <div style={{width: 400, margin: '0 auto 100px'}}>
                 <div>333</div>
@@ -48,6 +71,6 @@ const App = React.createClass({
             </div>
         )
     }
-});
+}
 
 export default App;
