@@ -27,6 +27,7 @@ const columns = [{
 
 import { DatePicker, message ,Table} from 'antd';
 import {Link} from 'react-router'
+//pshr
 const App = React.createClass({
     getInitialState() {
         return {
@@ -42,6 +43,7 @@ const App = React.createClass({
     render() {
         return (
             <div style={{width: 400, margin: '0 auto 100px'}}>
+                <head>h1</head>
                 <DatePicker onChange={this.handleChange} />
                 <div style={{marginTop: 20}}>当前日期：{this.state.date.toString()}</div>
                 <Table dataSource={dataSource} columns={columns} />

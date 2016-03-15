@@ -10,7 +10,10 @@ import { Router, Route ,hashHistory,IndexRoute} from 'react-router'
 const Layout = React.createClass({
     render() {
         return (
-            this.props.children
+            <div>
+                <Menu></Menu>
+                <div class='page'>this.props.children</div>
+                <div>
         )
     }
 });
@@ -27,4 +30,4 @@ ReactDOM.render((
             <IndexRoute component={App}/>
         </Route>
     </Router>
-), document.getElementById('root'));
+), document.getElementById('root'))
