@@ -42,6 +42,6 @@ module.exports = {
         "react-dom":"ReactDOM",
         "react":"React",
         "rx-lite":"Rx",
-        //"antd":"antd"
+        "antd":"antd"
     }
 };

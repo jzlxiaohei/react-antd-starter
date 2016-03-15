@@ -4,6 +4,5 @@
     "development": {
       "presets": ["react-hmre"]
     }
-  },
-  "plugins": ["antd"]
+  }
 }

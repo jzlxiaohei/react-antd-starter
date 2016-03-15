@@ -53,7 +53,7 @@ module.exports = {
         "jquery":"jquery",
         "react-dom":"ReactDOM",
         "react":"React",
-        "rx-lite":"Rx"
-        //"antd":"antd"
+        "rx-lite":"Rx",
+        "antd":"antd"
     }
 };

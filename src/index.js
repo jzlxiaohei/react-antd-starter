@@ -1,5 +1,3 @@
-import 'antd/lib/index.css';
-
 import App  from './App';
 //import App2 from './App2'
 import './stores'
