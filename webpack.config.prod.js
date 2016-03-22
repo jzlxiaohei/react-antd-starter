@@ -50,7 +50,7 @@ module.exports = {
         return [autoprefixer, precss];
     },
     externals:{
-        "jquery":"jquery",
+        "jquery":"jQuery",
         "react-dom":"ReactDOM",
         "react":"React",
         "rx-lite":"Rx",
