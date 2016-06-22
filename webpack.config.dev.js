@@ -3,6 +3,7 @@ var webpack = require('webpack');
 
 
 module.exports = {
+    cache:ture,
     devtool: 'cheap-module-eval-source-map',
     entry: {
         bundle:[
@@ -23,7 +24,7 @@ module.exports = {
         loaders: [
             {
                 test: /\.js$/,
-                loaders: ['babel'],
+                loaders: ['babel?cacheDirectory=true'],
                 include: path.join(__dirname, 'src')
             },
             {
